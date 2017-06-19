@@ -176,8 +176,8 @@ public class Project {
         properties.setProperty(NAME_KEY, getName());
         properties.setProperty(VERSION_KEY, getVersion());
         ArrayList<DmlFile> dmls = new ArrayList<>();
-        dmls.addAll(getDmls());
         dmls.addAll(sourceDmls);
+        dmls.addAll(getDmls());
         properties.setProperty(DML_FILES_KEY, join(dmls, Collections.emptyList()));
         if (dependencies.size() > 0) {
             properties.setProperty(DEPENDS_KEY, join(getDependencyProjects(), getOptionalDependencies()));
